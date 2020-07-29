@@ -1,0 +1,26 @@
+{
+  "name": "rss-reader",
+  "version": "1.0.0",
+  "description": "RSS feed reader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rss",
+    "reader",
+    "news"
+  ],
+  "author": "Julian Nicholls <juliannicholls29@gmail.com> (https://reallybigshoe.co.uk/)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fast-xml-parser": "^3.17.4",
+    "node-html-parser": "^1.2.20"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.0.26",
+    "typescript": "^3.9.7"
+  }
+}

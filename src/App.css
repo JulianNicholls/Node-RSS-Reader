@@ -1,5 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+:root {
+  --body-bg: #bdf6fe;
+  --body-text: #222222;
+  --container-bg: #fdfdfe;
+  --header-bg: #fddc5c;
+  --header-text: #222222;
+  --header-splitter: #ccbe00;
+  --item-bg: #bdf6fe;
+  --item-text: #222222;
+  --link: #222288;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  background: var(--body-bg);
+  color: var(--body-text);
   font-family: Lato, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 0.5em;
+  margin: 2em 0 1em 0;
+}
+
+.container {
+  background: var(--container-bg);
+  max-width: 1200px;
+  padding: 1em 2em;
+  margin: 0 auto;
+}
+
+.channel-header {
+  display: flex;
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 0.5em;
+}
+
+.channel-img {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 140px;
+  border-right: 1px solid var(--header-splitter);
+  margin-right: 1em;
+}
+
+.channel-info {
+  flex: 1;
+}
+
+.channel-info2 {
+  width: 140px;
+  padding-left: 0.5em;
+  border-left: 1px solid var(--header-splitter);
+}
+
+.feed-item {
+  background: var(--item-bg);
+  color: var(--item-text);
+  border: 1px solid var(--item-text);
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.feed-item header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.feed-item header span {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.feed-item h2 {
+  font-size: 1.2rem;
+}
+
+.feed-item .feed-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed-item a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.feed-item a:hover, .feed-item a:focus {
+  font-weight: bold;
+  text-decoration: underline;
 }

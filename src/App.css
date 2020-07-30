@@ -35,6 +35,16 @@ footer {
   margin: 2em 0 1em 0;
 }
 
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .container {
   background: var(--container-bg);
   max-width: 1200px;
@@ -89,20 +99,10 @@ footer {
 }
 
 .feed-item h2 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .feed-item .feed-body {
   display: flex;
   justify-content: space-between;
-}
-
-.feed-item a {
-  color: var(--link);
-  text-decoration: none;
-}
-
-.feed-item a:hover, .feed-item a:focus {
-  font-weight: bold;
-  text-decoration: underline;
 }

@@ -11,6 +11,7 @@ const Channel = ({ channel }: ChannelProps) => {
     image,
     title,
     description,
+    copyright,
     lastBuildDate,
     pubDate,
     item: items,
@@ -24,6 +25,17 @@ const Channel = ({ channel }: ChannelProps) => {
     dateStr = dateDate.toLocaleDateString() + ' ' + dateDate.toLocaleTimeString();
   }
 
+  const linkify = (text: string) => {
+    // If there are already links embedded, then return unchanged
+    if (/<a/.test(text)) return text;
+
+    return text.replace(
+      /(https?:\/\/\S+)/g,
+      '<a href="$&" target="_blank" rel="noopener noreferrer">$&</a>'
+    );
+  };
+  const makeHtml = (text: string) => ({ __html: text });
+
   return (
     <>
       <div className="channel-header">
@@ -34,6 +46,9 @@ const Channel = ({ channel }: ChannelProps) => {
         <div className="channel-info">
           <h2>{title}</h2>
           {description !== title && <p>{description}</p>}
+          {copyright && (
+            <p dangerouslySetInnerHTML={makeHtml(linkify(copyright))} />
+          )}
           {dateStr && <p>Last updated {dateStr}</p>}
         </div>
 

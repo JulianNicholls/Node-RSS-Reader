@@ -1,12 +1,14 @@
 import React from 'react';
+import { FiRefreshCcw } from 'react-icons/fi';
 
 import Item from './Item';
 
 interface ChannelProps {
   channel: FeedChannel;
+  reload: () => void;
 }
 
-const Channel = ({ channel }: ChannelProps) => {
+const Channel = ({ channel, reload }: ChannelProps) => {
   const {
     image,
     title,
@@ -25,6 +27,7 @@ const Channel = ({ channel }: ChannelProps) => {
     dateStr = dateDate.toLocaleDateString() + ' ' + dateDate.toLocaleTimeString();
   }
 
+  // Convert textual links to <a>s
   const linkify = (text: string) => {
     // If there are already links embedded, then return unchanged
     if (/<a/.test(text)) return text;
@@ -34,6 +37,8 @@ const Channel = ({ channel }: ChannelProps) => {
       '<a href="$&" target="_blank" rel="noopener noreferrer">$&</a>'
     );
   };
+
+  // Create data for 'dangerouslySetHtml'
   const makeHtml = (text: string) => ({ __html: text });
 
   return (
@@ -52,7 +57,10 @@ const Channel = ({ channel }: ChannelProps) => {
           {dateStr && <p>Last updated {dateStr}</p>}
         </div>
 
-        <div className="channel-info2">Items: {items.length}</div>
+        <div className="channel-info2">
+          <span>Items: {items.length}</span>
+          <FiRefreshCcw className="big-icon" onClick={reload} />
+        </div>
       </div>
 
       <div className="container">

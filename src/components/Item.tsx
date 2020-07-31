@@ -6,17 +6,19 @@ interface ItemProps {
 
 const Item = ({ item }: ItemProps) => {
   const { title, description, link, pubDate } = item;
+  let dateStr = '';
 
-  const dateDate = new Date(pubDate);
+  if (pubDate) {
+    const dateDate = new Date(pubDate);
 
-  const dateStr =
-    dateDate.toLocaleDateString() + ' ' + dateDate.toLocaleTimeString();
+    dateStr = dateDate.toLocaleDateString() + ' ' + dateDate.toLocaleTimeString();
+  }
 
   return (
     <div className="feed-item">
       <header>
         <h2>{title}</h2>
-        <span>{dateStr}</span>
+        {dateStr && <span>{dateStr}</span>}
       </header>
       <div className="feed-body">
         <span>{description}</span>

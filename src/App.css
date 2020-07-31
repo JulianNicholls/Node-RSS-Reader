@@ -73,9 +73,17 @@ a:hover, a:focus {
 }
 
 .channel-info2 {
+  display: flex;
+  flex-direction: column;
   width: 140px;
   padding-left: 0.5em;
   border-left: 1px solid var(--header-splitter);
+}
+
+.big-icon {
+  margin: 1rem;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 .feed-item {

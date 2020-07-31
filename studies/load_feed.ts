@@ -5,6 +5,7 @@ import parser from 'fast-xml-parser';
 import axios from 'axios';
 
 const BBC_RSS_URL = 'http://feeds.bbci.co.uk/news/rss.xml';
+const APPLE_URL = 'http://developer.apple.com/news/rss/news.rss';
 
 const fxpOptions = {
   attributeNamePrefix: '', // Don't prefix attributes
@@ -29,6 +30,7 @@ const loadPage = async (url: string) => {
 
 const main = async () => {
   const page = await loadPage(BBC_RSS_URL);
+  // const page = await loadPage(APPLE_URL);
 
   try {
     const jsonData = parser.parse(page, fxpOptions, true);
@@ -48,7 +50,7 @@ const main = async () => {
       console.log(title);
     });
 
-    // console.log(JSON.stringify(jsonData, null, 2));
+    console.log('Raw:\n', JSON.stringify(jsonData, null, 2));
   } catch (error) {
     console.error(error.message);
   }

@@ -18,14 +18,21 @@ function App() {
     setLoading(true);
     setError('');
 
-    const response = await axios.get(`${PROXY_URL}${BBC_RSS_URL}`);
+    try {
+      const response = await axios.get(`${PROXY_URL}${BBC_RSS_URL}`);
+      const { data } = response;
 
-    if (response.status === 200) {
-      setRSSChannel(response.data.channel);
+      if (response.status === 200) {
+        setRSSChannel(data.channel);
+      } else {
+        console.error(data.error);
+        setError(data.error.message);
+      }
+    } catch (err) {
+      console.error({ err });
+      setError(err.message);
+    } finally {
       setLoading(false);
-    } else {
-      console.error(response.data.error);
-      setError(response.data.error.message);
     }
   };
 
@@ -35,8 +42,8 @@ function App() {
 
   const reload = () => loadRSS();
 
-  if (loading) return <h2 className="loading">Loading...</h2>;
-  if (error) return <h2 className="error">{error}</h2>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="App">

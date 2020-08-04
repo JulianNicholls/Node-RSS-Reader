@@ -1,5 +1,5 @@
-import React from 'react';
-import { FiRefreshCcw } from 'react-icons/fi';
+import React, { useRef, useEffect } from 'react';
+import { FiRefreshCw } from 'react-icons/fi';
 
 import Item from './Item';
 
@@ -9,6 +9,8 @@ interface ChannelProps {
 }
 
 const Channel = ({ channel, reload }: ChannelProps) => {
+  const reloadRef = useRef<NodeJS.Timeout | null>(null);
+
   const {
     image,
     title,
@@ -16,15 +18,31 @@ const Channel = ({ channel, reload }: ChannelProps) => {
     copyright,
     lastBuildDate,
     pubDate,
+    ttl,
     item: items,
   } = channel;
 
   let dateStr = lastBuildDate ? lastBuildDate : pubDate ? pubDate : null;
 
+  useEffect(() => {
+    if (ttl) reloadRef.current = setTimeout(reload, ttl * 60 * 1000);
+
+    return () => {
+      if (reloadRef.current) clearTimeout(reloadRef.current);
+    };
+  }, [reload, ttl]);
+
   if (dateStr) {
     const dateDate = new Date(dateStr);
 
-    dateStr = dateDate.toLocaleDateString() + ' ' + dateDate.toLocaleTimeString();
+    dateStr =
+      dateDate.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: '2-digit',
+      }) +
+      ' ' +
+      dateDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
   }
 
   // Convert textual links to <a>s
@@ -58,8 +76,8 @@ const Channel = ({ channel, reload }: ChannelProps) => {
         </div>
 
         <div className="channel-info2">
-          <span>Items: {items.length}</span>
-          <FiRefreshCcw className="big-icon" onClick={reload} />
+          <span>{items.length} stories</span>
+          <FiRefreshCw className="big-icon" onClick={reload} />
         </div>
       </div>
 

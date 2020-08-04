@@ -3,13 +3,15 @@
 :root {
   --body-bg: #bdf6fe;
   --body-text: #222222;
-  --container-bg: #fdfdfe;
+  --container-bg: #bdf6fe;
   --header-bg: #fddc5c;
   --header-text: #222222;
   --header-splitter: #ccbe00;
-  --item-bg: #bdf6fe;
+  --item-bg: #fdfdfe;
   --item-text: #222222;
   --link: #222288;
+  --error-bg: #ffa8a8;
+  --error-text: #5e1717;
 }
 
 * {
@@ -32,7 +34,7 @@ footer {
   background: var(--header-bg);
   color: var(--header-text);
   padding: 0.5em;
-  margin: 2em 0 1em 0;
+  margin: 1em 0 1em 0;
 }
 
 a {
@@ -45,6 +47,22 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+.loading {
+  background: var(--header-bg);
+  padding: 1em;
+  color: var(--header-text);
+  text-align: center;
+  font-size: 2rem;
+  margin: 1.5em;
+}
+
+.error {
+  background: var(--error-bg);
+  color: var(--error-text);
+  padding: 1em;
+  font-size: 1.5rem;
+  text-align: center;
+}
 .container {
   background: var(--container-bg);
   max-width: 1200px;
@@ -75,6 +93,7 @@ a:hover, a:focus {
 .channel-info2 {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 140px;
   padding-left: 0.5em;
   border-left: 1px solid var(--header-splitter);
@@ -82,7 +101,7 @@ a:hover, a:focus {
 
 .big-icon {
   margin: 1rem;
-  font-size: 40px;
+  font-size: 50px;
   cursor: pointer;
 }
 
@@ -101,9 +120,14 @@ a:hover, a:focus {
   margin-bottom: 0.5em;
 }
 
-.feed-item header span {
+.feed-item header div.stamp {
   font-size: 0.85rem;
   color: #666;
+}
+
+div.right {
+  width: 16ch;
+  text-align: right;
 }
 
 .feed-item h2 {

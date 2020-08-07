@@ -42,7 +42,11 @@ const Channel = ({ channel, reload }: ChannelProps) => {
         year: '2-digit',
       }) +
       ' ' +
-      dateDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+      dateDate.toLocaleTimeString('en-GB', {
+        hour12: true,
+        hour: 'numeric',
+        minute: '2-digit',
+      });
   }
 
   // Convert textual links to <a>s

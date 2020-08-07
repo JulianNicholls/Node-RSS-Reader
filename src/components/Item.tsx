@@ -18,7 +18,11 @@ const Item = ({ item }: ItemProps) => {
         year: '2-digit',
       }) +
       ' ' +
-      dateDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+      dateDate.toLocaleTimeString('en-GB', {
+        hour12: true,
+        hour: 'numeric',
+        minute: '2-digit',
+      });
   }
 
   return (

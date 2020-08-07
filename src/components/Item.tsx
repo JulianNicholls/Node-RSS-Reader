@@ -28,7 +28,9 @@ const Item = ({ item }: ItemProps) => {
   return (
     <div className="feed-item">
       <header>
-        <h2>{title}</h2>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <h2>{title}</h2>
+        </a>
         {dateStr && <div className="stamp right">{dateStr}</div>}
       </header>
       <div className="feed-body">

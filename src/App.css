@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 :root {
-  --body-bg: #bdf6fe;
-  --body-text: #222222;
-  --container-bg: #bdf6fe;
-  --header-bg: #fddc5c;
-  --header-text: #222222;
-  --header-splitter: #ccbe00;
-  --item-bg: #fdfdfe;
-  --item-text: #222222;
-  --link: #222288;
+  --body-bg: #444444;
+  --body-text: #eeeeee;
+  --container-bg: #444444;
+  --header-bg: #555555;
+  --header-text: #eeeeee;
+  --header-splitter: #222222;
+  --item-bg: #333333;
+  --item-text: #eeeeee;
+  --link: #ffe000;
   --error-bg: #ffa8a8;
   --error-text: #5e1717;
 }
@@ -37,7 +37,7 @@ footer {
   margin: 1em 0 1em 0;
 }
 
-a {
+a, a:visited {
   color: var(--link);
   text-decoration: none;
 }
@@ -122,7 +122,7 @@ a:hover, a:focus {
 
 .feed-item header div.stamp {
   font-size: 0.85rem;
-  color: #666;
+  color: #bbb;
 }
 
 div.right {

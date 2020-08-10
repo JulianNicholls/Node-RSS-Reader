@@ -1,5 +1,7 @@
 import React from 'react';
 
+import humanTime from '../humantime';
+
 interface ItemProps {
   item: FeedItem;
 }
@@ -11,18 +13,7 @@ const Item = ({ item }: ItemProps) => {
   if (pubDate) {
     const dateDate = new Date(pubDate);
 
-    dateStr =
-      dateDate.toLocaleDateString('en-GB', {
-        day: 'numeric',
-        month: 'short',
-        year: '2-digit',
-      }) +
-      ' ' +
-      dateDate.toLocaleTimeString('en-GB', {
-        hour12: true,
-        hour: 'numeric',
-        minute: '2-digit',
-      });
+    dateStr = humanTime(dateDate);
   }
 
   return (

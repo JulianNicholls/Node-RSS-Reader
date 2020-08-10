@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { FiRefreshCw } from 'react-icons/fi';
 
 import Item from './Item';
+import humanTime from '../humantime';
 
 interface ChannelProps {
   channel: FeedChannel;
@@ -35,18 +36,7 @@ const Channel = ({ channel, reload }: ChannelProps) => {
   if (dateStr) {
     const dateDate = new Date(dateStr);
 
-    dateStr =
-      dateDate.toLocaleDateString('en-GB', {
-        day: 'numeric',
-        month: 'short',
-        year: '2-digit',
-      }) +
-      ' ' +
-      dateDate.toLocaleTimeString('en-GB', {
-        hour12: true,
-        hour: 'numeric',
-        minute: '2-digit',
-      });
+    dateStr = humanTime(dateDate).toLowerCase();
   }
 
   // Convert textual links to <a>s

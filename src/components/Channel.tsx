@@ -20,10 +20,23 @@ const Channel = ({ channel, reload }: ChannelProps) => {
     lastBuildDate,
     pubDate,
     ttl,
-    item: items,
+    item,
   } = channel;
 
+  const items = [...item];
+
   let dateStr = lastBuildDate ? lastBuildDate : pubDate ? pubDate : null;
+
+  items.sort((a, b) => {
+    if (a.pubDate && b.pubDate) {
+      const left = new Date(a.pubDate).valueOf();
+      const right = new Date(b.pubDate).valueOf();
+
+      return right - left;
+    }
+
+    return 1;
+  });
 
   useEffect(() => {
     if (ttl) reloadRef.current = setTimeout(reload, ttl * 60 * 1000);

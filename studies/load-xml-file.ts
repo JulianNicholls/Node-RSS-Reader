@@ -9,7 +9,7 @@ const fxpOptions = {
   parseAttributeValue: true, // Parse out attribute values to Number etc
 };
 
-const xmlData = fs.readFileSync('bbc_news_rss.xml', 'utf-8');
+const xmlData = fs.readFileSync('funwithforms.xml', 'utf-8');
 
 try {
   const jsonData = parser.parse(xmlData, fxpOptions, true);

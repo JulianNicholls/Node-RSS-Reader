@@ -22,11 +22,13 @@ body {
   background: var(--body-bg);
   color: var(--body-text);
   font-family: Lato, sans-serif;
+  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
   margin: 0;
 }
 
@@ -48,9 +50,9 @@ a:hover, a:focus {
 }
 
 .loading {
-  background: var(--header-bg);
+  background: var(--link);
   padding: 1em;
-  color: var(--header-text);
+  color: var(--header-bg);
   text-align: center;
   font-size: 2rem;
   margin: 1.5em;
@@ -110,24 +112,25 @@ a:hover, a:focus {
   color: var(--item-text);
   border: 1px solid var(--item-text);
   border-radius: 0.5em;
-  padding: 0.5em;
-  margin-bottom: 0.5em;
+  padding: 0.6em 1em;
+  margin-bottom: 0.6em;
 }
 
 .feed-item header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
 }
 
 .feed-item header div.stamp {
   font-size: 0.85rem;
-  color: #bbb;
+  color: #ccc;
 }
 
 div.right {
   width: 16ch;
   text-align: right;
+  align-self: flex-end;
 }
 
 .feed-item h2 {

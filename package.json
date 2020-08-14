@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
+    "@testing-library/jest-dom": "5.11",
+    "@testing-library/react": "10.4",
+    "@testing-library/user-event": "12.1",
+    "@types/jest": "26",
+    "@types/node": "14",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
-    "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "react-scripts": "3.4.3",
+    "typescript": "3.9"
   },
   "scripts": {
     "start": "HTTPS=true SSL_CERT_FILE=.cert/cert.pem SSL_KEY_FILE=.cert/key.pem react-scripts start",

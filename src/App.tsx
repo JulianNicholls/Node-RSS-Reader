@@ -6,8 +6,10 @@ import Channel from './components/Channel';
 import './App.css';
 
 const PROXY_URL = 'https://nearby-proxy.vercel.app/api/getRSSFeed?feed=';
-const BBC_RSS_URL = 'http://feeds.bbci.co.uk/news/rss.xml';
+// const LOCAL_PROXY_URL = 'http://localhost:3001/api/getRSSFeed?feed=';
+const BBC_URL = 'http://feeds.bbci.co.uk/news/rss.xml';
 // const APPLE_URL = 'http://developer.apple.com/news/rss/news.rss';
+// const FUN_URL = 'https://funwithforms.com/feed/feed.xml';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -19,11 +21,15 @@ function App() {
     setError('');
 
     try {
-      const response = await axios.get(`${PROXY_URL}${BBC_RSS_URL}`);
+      const response = await axios.get(`${PROXY_URL}${BBC_URL}`);
       const { data } = response;
 
       if (response.status === 200) {
-        setRSSChannel(data.channel);
+        if (data.channel) setRSSChannel(data.channel);
+        else if (data.feed) {
+          console.log('Feed, not channel');
+          setRSSChannel(data.feed);
+        } else setError('Unexpected error');
       } else {
         console.error(data.error);
         setError(data.error.message);

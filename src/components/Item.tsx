@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import humanTime from '../humantime';
 
@@ -7,14 +7,26 @@ interface ItemProps {
 }
 
 const Item = ({ item }: ItemProps) => {
-  const { title, description, link, pubDate } = item;
-  let dateStr = '';
+  const { title, description, content, link, pubDate } = item;
+  const [dateStr, setDateStr] = useState<string>('');
 
-  if (pubDate) {
-    const dateDate = new Date(pubDate);
+  useEffect(() => {
+    const setNewDateStr = () => {
+      if (pubDate) {
+        const dateDate = new Date(pubDate);
 
-    dateStr = humanTime(dateDate);
-  }
+        setDateStr(humanTime(dateDate));
+      }
+    };
+
+    setNewDateStr();
+
+    const id = setInterval(setNewDateStr, 80000 + Math.random() * 20000);
+
+    return () => {
+      clearInterval(id);
+    };
+  }, [pubDate]);
 
   return (
     <div className="feed-item">
@@ -25,7 +37,8 @@ const Item = ({ item }: ItemProps) => {
         {dateStr && <div className="stamp right">{dateStr}</div>}
       </header>
       <div className="feed-body">
-        <span>{description}</span>
+        {description && <span>{description}</span>}
+        {content && <span>{content['#text']}</span>}
 
         {link && (
           <div className="right">

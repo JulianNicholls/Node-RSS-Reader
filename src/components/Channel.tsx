@@ -19,13 +19,19 @@ const Channel = ({ channel, reload }: ChannelProps) => {
     copyright,
     lastBuildDate,
     pubDate,
+    updated,
     ttl,
     item,
+    entry,
   } = channel;
 
-  const items = [...item];
+  let items = item ? [...item] : [...entry];
 
-  let dateStr = lastBuildDate ? lastBuildDate : pubDate ? pubDate : null;
+  let dateStr: string | null = null;
+
+  if (lastBuildDate) dateStr = lastBuildDate;
+  else if (pubDate) dateStr = pubDate;
+  else if (updated) dateStr = updated;
 
   items.sort((a, b) => {
     if (a.pubDate && b.pubDate) {

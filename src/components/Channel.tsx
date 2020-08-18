@@ -83,7 +83,10 @@ const Channel = ({ channel, reload }: ChannelProps) => {
           <h2>{title}</h2>
           {description !== title && <p>{description}</p>}
           {copyright && (
-            <p dangerouslySetInnerHTML={makeHtml(linkify(copyright))} />
+            <p
+              className="copyright"
+              dangerouslySetInnerHTML={makeHtml(linkify(copyright))}
+            />
           )}
           {dateStr && <p>Last updated {dateStr}</p>}
         </div>

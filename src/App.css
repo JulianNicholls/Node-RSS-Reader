@@ -9,7 +9,7 @@
   --header-splitter: #222222;
   --item-bg: #333333;
   --item-text: #eeeeee;
-  --link: #ffe000;
+  --link: #00bdd6;
   --error-bg: #ffa8a8;
   --error-text: #5e1717;
 }
@@ -87,6 +87,10 @@ a:hover, a:focus {
   width: 140px;
   border-right: 1px solid var(--header-splitter);
   margin-right: 1em;
+}
+
+.copyright {
+  font-size: 1.1rem;
 }
 
 .channel-info {

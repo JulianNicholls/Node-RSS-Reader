@@ -24,8 +24,6 @@ const options = {
 mongoose
   .connect(mongoURI, options)
   .then(() => {
-    console.log('Connected to Local Mongo');
-
     SiteModel.find({}, (err, docs) => {
       if (err) console.error(err);
       else {
@@ -43,5 +41,5 @@ mongoose
     });
   })
   .catch((error) => {
-    console.error(error);
+    console.error('Connection failure', { error });
   });

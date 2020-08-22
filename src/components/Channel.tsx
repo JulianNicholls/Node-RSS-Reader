@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { FiRefreshCw } from 'react-icons/fi';
 
 import Item from './Item';
+import SelectFeed from './SelectFeed';
 import humanTime from '../humantime';
 
 interface ChannelProps {
@@ -89,6 +90,8 @@ const Channel = ({ channel, reload }: ChannelProps) => {
             />
           )}
           {dateStr && <p>Last updated {dateStr}</p>}
+
+          <SelectFeed />
         </div>
 
         <div className="channel-info2">

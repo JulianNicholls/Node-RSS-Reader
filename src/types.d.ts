@@ -45,3 +45,9 @@ type FeedChannel = {
   ttl?: number;
   image?: FeedImage;
 };
+
+type FeedDocument = {
+  _id: string;
+  name: string;
+  url: string;
+};

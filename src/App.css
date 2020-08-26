@@ -55,6 +55,7 @@ a:hover, a:focus {
   color: var(--header-bg);
   text-align: center;
   font-size: 2rem;
+  font-weight: bold;
   margin: 10vh 30vw;
 }
 
@@ -63,6 +64,7 @@ a:hover, a:focus {
   color: var(--error-text);
   padding: 1em;
   font-size: 1.5rem;
+  font-weight: bold;
   text-align: center;
 }
 

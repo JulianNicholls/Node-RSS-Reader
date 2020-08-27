@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/app.js"
+    "start": "tsc && PORT=3000 node dist/app.js",
+    "dev": "tsc && node dist/app.js"
   },
   "keywords": [],
   "author": "Julian Nicholls <juliannicholls29@gmail.com> (https://reallybigshoe.co.uk/)",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
     "express": "^4.17.1",
+    "fast-xml-parser": "^3.17.4",
     "mongoose": "^5.10.0",
     "typescript": "^3.9.7"
   },

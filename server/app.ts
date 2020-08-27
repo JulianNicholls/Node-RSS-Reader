@@ -1,7 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
-import apiRoutes from './routes';
+import feedRoutes from './routes/feeds';
+import siteRoutes from './routes/sites';
 
 const app = express();
 
@@ -18,7 +19,8 @@ mongoose
   .then(() => {
     console.log('Connected to local Mongo');
 
-    app.use('/api/feeds', apiRoutes);
+    app.use('/api/feeds', feedRoutes);
+    app.use('/api/site', siteRoutes);
 
     app.listen(port, () => {
       console.log('Server listening on port', port);

@@ -22,6 +22,19 @@ mongoose
     app.use('/api/feeds', feedRoutes);
     app.use('/api/site', siteRoutes);
 
+    if (process.env.NODE_ENV === 'production') {
+      // Express will serve up production assets,
+      // i.e. mainXXX.js and mainXXX.css
+      app.use(express.static('build'));
+
+      // Express will serve up the index.html file
+      // if it doesn't recognise the route
+      const path = require('path');
+      app.get('*', (_req, res) => {
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+      });
+    }
+
     app.listen(port, () => {
       console.log('Server listening on port', port);
     });

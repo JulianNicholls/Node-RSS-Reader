@@ -9,6 +9,7 @@
   --header-splitter: #222222;
   --item-bg: #333333;
   --item-text: #eeeeee;
+  --timestamp: rgba(240, 240, 240, 0.75);
   --link: #00bdd6;
   --error-bg: #ffa8a8;
   --error-text: #5e1717;
@@ -102,7 +103,6 @@ a:hover, a:focus {
 select#feed-select {
   width: 30%;
   margin: 0 0 0 68%;
-  /* margin-right: 1rem; */
 }
 
 .channel-info2 {
@@ -137,7 +137,7 @@ select#feed-select {
 
 .feed-item header div.stamp {
   font-size: 0.85rem;
-  color: #ccc;
+  color: var(--timestamp);
 }
 
 div.right {

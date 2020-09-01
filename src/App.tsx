@@ -5,7 +5,8 @@ import Channel from './components/Channel';
 
 import './App.css';
 
-const PROXY_URL = 'https://nearby-proxy.vercel.app/api/getRSSFeed?feed=';
+const PROXY_URL = '/api/site/';
+// const PROXY_URL = 'https://nearby-proxy.vercel.app/api/getRSSFeed?feed=';
 // const LOCAL_PROXY_URL = 'http://localhost:3001/api/getRSSFeed?feed=';
 const BBC_URL = 'http://feeds.bbci.co.uk/news/rss.xml';
 // const APPLE_URL = 'http://developer.apple.com/news/rss/news.rss';
@@ -21,7 +22,9 @@ function App() {
     setError('');
 
     try {
-      const response = await axios.get(`${PROXY_URL}${BBC_URL}`);
+      const response = await axios.get(
+        `${PROXY_URL}${encodeURIComponent(BBC_URL)}`
+      );
       const { data } = response;
 
       if (response.status === 200) {

@@ -1,29 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 import Channel from './components/Channel';
+import { useFeeds } from './context';
 
 import './App.css';
 
 const PROXY_URL = '/api/site/';
 // const PROXY_URL = 'https://nearby-proxy.vercel.app/api/getRSSFeed?feed=';
 // const LOCAL_PROXY_URL = 'http://localhost:3001/api/getRSSFeed?feed=';
-const BBC_URL = 'http://feeds.bbci.co.uk/news/rss.xml';
+// const BBC_URL = 'http://feeds.bbci.co.uk/news/rss.xml';
 // const APPLE_URL = 'http://developer.apple.com/news/rss/news.rss';
 // const FUN_URL = 'https://funwithforms.com/feed/feed.xml';
 
 function App() {
+  const { currentFeed } = useFeeds();
+
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
   const [rssChannel, setRSSChannel] = useState<FeedChannel>({} as FeedChannel);
 
-  const loadRSS = async () => {
+  const loadRSS = useCallback(async () => {
     setLoading(true);
     setError('');
 
     try {
       const response = await axios.get(
-        `${PROXY_URL}${encodeURIComponent(BBC_URL)}`
+        `${PROXY_URL}${encodeURIComponent(currentFeed)}`
       );
       const { data } = response;
 
@@ -32,7 +35,7 @@ function App() {
         else if (data.feed) {
           console.log('Feed, not channel');
           setRSSChannel(data.feed);
-        } else setError('Unexpected error');
+        } else setError(`Unexpected feed or channel error: ${data.error}`);
       } else {
         console.error(data.error);
         setError(data.error.message);
@@ -43,11 +46,13 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [currentFeed]);
 
   useEffect(() => {
-    loadRSS();
-  }, []);
+    // console.log({ feeds });
+
+    if (currentFeed) loadRSS();
+  }, [currentFeed, loadRSS]);
 
   const reload = () => loadRSS();
 

@@ -101,8 +101,8 @@ const Channel = ({ channel, reload }: ChannelProps) => {
       </div>
 
       <div className="container">
-        {items.map((item) => (
-          <Item key={item.title} item={item} />
+        {items.map((item, idx) => (
+          <Item key={idx} item={item} />
         ))}
       </div>
     </>

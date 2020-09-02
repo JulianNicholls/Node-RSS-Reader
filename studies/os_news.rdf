@@ -1,0 +1,172 @@
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://www.osnews.com/files/recent.rdf">
+<title>OSNews</title>
+<link>http://www.osnews.com/</link>
+<description>Exploring the Future of Computing</description>
+
+   <image rdf:resource="http://www.osnews.com/images/osnews.gif" />
+    <items>
+      <rdf:Seq>
+<rdf:li resource="http://www.osnews.com/story/30937/Google_denies_altering_YouTube_code_to_break_Microsoft_Edge" /><rdf:li resource="http://www.osnews.com/story/30936/How_Amazon_Apple_and_Google_played_the_tax-break_game" /><rdf:li resource="http://www.osnews.com/story/30935/A_first_look_at_the_Fuchsia_SDK" /><rdf:li resource="http://www.osnews.com/story/30934/MIPS_goes_open_source" /><rdf:li resource="http://www.osnews.com/story/30933/Dr_Google_is_a_liar" /><rdf:li resource="http://www.osnews.com/story/30932/Windows_monthly_security_and_quality_updates_overview" /><rdf:li resource="http://www.osnews.com/story/30931/Compiz_Ubuntu_Desktop_s_little_known_best_friend" /><rdf:li resource="http://www.osnews.com/story/30930/Windows_Server_2019_includes_OpenSSH" /><rdf:li resource="http://www.osnews.com/story/30929/FreeBSD_12_0_released" /><rdf:li resource="http://www.osnews.com/story/30928/The_future_of_Core_Intel_GPUs_10nm_and_Hybrid_x86" /><rdf:li resource="http://www.osnews.com/story/30927/Linux_kernel_developers_discuss_dropping_x32_support" /><rdf:li resource="http://www.osnews.com/story/30926/Archiving_C64_tapes_correctly" /><rdf:li resource="http://www.osnews.com/story/30925/How_Doug_Engelbart_pulled_off_the_Mother_of_all_Demos" /><rdf:li resource="http://www.osnews.com/story/30924/How_a_major_bug_in_the_October_2018_Update_slipped_past_Microsoft" /><rdf:li resource="http://www.osnews.com/story/30923/Android_Emulator_picks_up_support_for_Fuchsia_s_Zircon_kernel" /></rdf:Seq></items><textinput rdf:resource="http://www.osnews.com/search.php" /></channel><image rdf:about="http://www.osnews.com/images/osnews.gif"><title>OSNews.com</title><link>http://www.osnews.com/</link><url>http://www.osnews.com/images/osnews.gif</url></image>
+<item rdf:about="http://www.osnews.com/story/30937/Google_denies_altering_YouTube_code_to_break_Microsoft_Edge">
+<title>Google denies altering YouTube code to break Microsoft Edge</title>
+<link>http://www.osnews.com/story/30937/Google_denies_altering_YouTube_code_to_break_Microsoft_Edge</link>
+<description>A former Microsoft intern has revealed details of a YouTube incident that has convinced some Edge browser engineers that Google added code to purposely break compatibility. In a post on Hacker News, Joshua Bakita, a former software engineering intern at Microsoft, lays out details and claims about an incident earlier this year. Microsoft has since announced the company is moving from the EdgeHTML rendering engine to the open source Chromium project for its Edge browser.
+
+[...]
+
+Google disputes Bakita's claims, and says the YouTube blank div was merely a bug that was fixed after it was reported. &quot;YouTube does not add code designed to defeat optimizations in other browsers, and works quickly to fix bugs when they're discovered,&quot; says a YouTube spokesperson in a statement to The Verge. &quot;We regularly engage with other browser vendors through standards bodies, the Web Platform Tests project, the open-source Chromium project and more to improve browser interoperability.&quot;
+
+
+While we're unlikely to ever know the real story behind this particular incident, I don't doubt for a second that Google would do something like this.</description>
+<dc:date>2018-12-20T18:26:02+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30936/How_Amazon_Apple_and_Google_played_the_tax-break_game">
+<title>How Amazon, Apple, and Google played the tax-break game</title>
+<link>http://www.osnews.com/story/30936/How_Amazon_Apple_and_Google_played_the_tax-break_game</link>
+<description>It took about 30 minutes for Williamson County commissioners to unanimously approve a roughly $16 million incentive package for Apple Tuesday morning, bringing the total amount the tech giant is likely to receive in exchange for choosing Austin as the site for its newest campus to a cool $41 million. The new addition is set to be Apple's second campus in the Austin, Texas, area - located less than a mile from the company's existing facility, established five years ago. It comes with the promise of a $1 billion dollar investment from Apple in the area and the addition of up to 15,000 new jobs.
+
+But the details of the incentive package Williamson County whipped up to woo Apple tell a slightly different story. In the contract approved by county officials, Apple committed to spending at least $400 million on the new campus and creating 4,000 jobs over 12 years. The contract says the jobs don’t necessarily have to be on the new campus in order for Apple to receive the promised incentives, but rather can be anywhere within Williamson County.
+
+Shady and shoddy deals like these are only the tip of the iceberg - and don't think this is merely an American thing. This entire past year in The Netherlands has been dominated by our newly elected government wanting to shove through an incredibly unpopular tax cut specifically designed to appease major (partly) Dutch multinationals like Shell and Unilever - a 2 billion euro tax cut while various important social services like police, education, and healthcare desperately need better pay and working conditions.
+
+In the end, under immense public and political pressure, the tax cut was cancelled, but it goes to show that these things happen everywhere - in large, powerful nations like the US, but also in small, insignificant welfare states like The Netherlands.</description>
+<dc:date>2018-12-20T18:19:08+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30935/A_first_look_at_the_Fuchsia_SDK">
+<title>A first look at the Fuchsia SDK</title>
+<link>http://www.osnews.com/story/30935/A_first_look_at_the_Fuchsia_SDK</link>
+<description>With the significant news this week that the Fuchsia SDK and a Fuchsia &quot;device&quot; are being added to the Android Open Source Project, now seems like a good time to learn more about the Fuchsia SDK. Today on Fuchsia Friday, we dive into the Fuchsia SDK and see what it has to offer developers who might want to get a head start on Fuchsia.
+
+Fuchsia is the only publicly known truly new operating system designed and built by one of the major technology companies. It's strange to think this may one day power Chromebooks and &quot;Android&quot; devices alike.</description>
+<dc:date>2018-12-18T02:08:22+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30934/MIPS_goes_open_source">
+<title>MIPS goes open source</title>
+<link>http://www.osnews.com/story/30934/MIPS_goes_open_source</link>
+<description>Without question, 2018 was the year RISC-V genuinely began to build momentum among chip architects hungry for open-source instruction sets. That was then.
+
+By 2019, RISC-V won't be the only game in town.
+
+Wave Computing announced Monday that it is putting MIPS on open source, with MIPS Instruction Set Architecture (ISA) and MIPS' latest core R6 available in the first quarter of 2019.
+
+Good news, and it makes me wonder - will we ever see a time where x86 and x86-64 are open source? I am definitely not well-versed enough in these matters to judge just how important the closed-source nature of the x86 ISA really is to Intel and AMD, but it seems like something that will never happen.</description>
+<dc:date>2018-12-18T02:03:13+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30933/Dr_Google_is_a_liar">
+<title>Dr. Google is a liar</title>
+<link>http://www.osnews.com/story/30933/Dr_Google_is_a_liar</link>
+<description>It started during yoga class. She felt a strange pull on her neck, a sensation completely foreign to her. Her friend suggested she rush to the emergency room. It turned out that she was having a heart attack.
+
+She didn’t fit the stereotype of someone likely to have a heart attack. She exercised, did not smoke, watched her plate. But on reviewing her medical history, I found that her cholesterol level was sky high. She had been prescribed a cholesterol-lowering statin medication, but she never picked up the prescription because of the scary things she had read about statins on the internet. She was the victim of a malady fast gearing up to be a modern pandemic - fake medical news.
+
+While misinformation has been the object of great attention in politics, medical misinformation might have an even greater body count. As is true with fake news in general, medical lies tend to spread further than truths on the internet - and they have very real repercussions.
+
+We already see the consequences of this with abusive parents not vaccinating their children based on clearly disproven lies and nonsense, but it also extends to other medical issues. What's especially interesting is that this affects people with higher educations a lot more than people with lower educations - might overconfidence be a slow and insidious killer (have a cookie if you catch that reference without Googling/DDG'ing)?
+
+In any event, while people not vaccinating their children should obviously be tried for child abuse, I can't say I can really care about what people do to their own bodies. If a grown adult wants to trust some baseless Facebook nonsense or whatever over qualified medical personnel, then she or he should be free to do so - and suffer the consequences.</description>
+<dc:date>2018-12-18T01:58:55+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30932/Windows_monthly_security_and_quality_updates_overview">
+<title>Windows monthly security and quality updates overview</title>
+<link>http://www.osnews.com/story/30932/Windows_monthly_security_and_quality_updates_overview</link>
+<description>Today's global cybersecurity threats are both dynamic and sophisticated, and new vulnerabilities are discovered almost every day. We focus on protecting customers from these security threats by providing security updates on a timely basis and with high quality.  We strive to help you keep your Windows devices, regardless of which version of Windows they are running, up to date with the latest monthly quality updates to help mitigate the evolving threat landscape.
+
+That is why, today, as part of our series of blogs on the Windows approach to quality, I'll share an overview of how we deliver these critical updates on a massive scale as a key component of our ongoing Windows as a service effort.
+
+After Microsoft's recent stumbles with Windows updates, the company has been putting out a number of blog posts about how it approaches updates. This particular blog post explains some of the inside baseball on the various categories updates get placed in, as well as the various tests the company runs to ensure updates are safe and reliable - exactly the area where Microsoft has been failing lately.</description>
+<dc:date>2018-12-18T01:51:00+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30931/Compiz_Ubuntu_Desktop_s_little_known_best_friend">
+<title>Compiz: Ubuntu Desktop's little known best friend</title>
+<link>http://www.osnews.com/story/30931/Compiz_Ubuntu_Desktop_s_little_known_best_friend</link>
+<description>Compiz can quickly get you the desktop you deserve: a desktop with a very high degree of customizability, on top of being faster than the default GNOME Shell, and (as far as I can tell) faster than Mac or Windows.
+
+The best part is that it takes no time at all to get up and running! I’ll show you how to transform Ubuntu into a desktop that is functionally similar to Mac.
+
+I doubt any of this is news to many OSNews readers, but it's still a nice introduction into the functionality offered by Compiz.</description>
+<dc:date>2018-12-13T01:06:29+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30930/Windows_Server_2019_includes_OpenSSH">
+<title>Windows Server 2019 includes OpenSSH</title>
+<link>http://www.osnews.com/story/30930/Windows_Server_2019_includes_OpenSSH</link>
+<description>The OpenSSH client and server are now available as a supported Feature-on-Demand in Windows Server 2019 and Windows 10 1809! The Win32 port of OpenSSH was first included in the Windows 10 Fall Creators Update and Windows Server 1709 as a pre-release feature. In the Windows 10 1803 release, OpenSSH was released as a supported feature on-demand component, but there was not a supported release on Windows Server until now.</description>
+<dc:date>2018-12-13T01:03:07+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30929/FreeBSD_12_0_released">
+<title>FreeBSD 12.0 released</title>
+<link>http://www.osnews.com/story/30929/FreeBSD_12_0_released</link>
+<description>The FreeBSD Release Engineering Team is pleased to announce the availability of FreeBSD 12.0-RELEASE. This is the first release of the stable/12 branch.
+
+The full release notes have all the details.</description>
+<dc:date>2018-12-12T23:34:18+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30928/The_future_of_Core_Intel_GPUs_10nm_and_Hybrid_x86">
+<title>The future of Core, Intel GPUs, 10nm, and Hybrid x86</title>
+<link>http://www.osnews.com/story/30928/The_future_of_Core_Intel_GPUs_10nm_and_Hybrid_x86</link>
+<description>It has been hard to miss the fact that Intel has been vacuuming up a lot of industry talent, which brings with them a lot of experience. Renduchintala, Koduri, Keller, Hook, and Carvill, are just to name a few. This new crew has decided to break Intel out of its shell for the first time in a while, holding the first in a new tradition of Intel Architecture Days. Through the five hours of presentations, Intel lifted the lid on the CPU core roadmaps through 2021, the next generation of integrated graphics, the future of Intel's graphics business, new chips built on 3D packaging technologies, and even parts of the microarchitecture for the 2019 consumer processors. In other words, it's many of the things we've been missing out on for years. And now that Intel is once again holding these kinds of disclosures, there's a lot to dig in to.
+
+AnandTech's coverage of the event.</description>
+<dc:date>2018-12-12T23:26:25+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30927/Linux_kernel_developers_discuss_dropping_x32_support">
+<title>Linux kernel developers discuss dropping x32 support</title>
+<link>http://www.osnews.com/story/30927/Linux_kernel_developers_discuss_dropping_x32_support</link>
+<description>It was just several years ago that the open-source ecosystem began supporting the x32 ABI, but already kernel developers are talking of potentially deprecating the support and for it to be ultimately removed.
+
+The Linux x32 ABI as a reminder requires x86_64 processors and is engineered to support the modern x86_64 features but with using 32-bit pointers rather than 64-bit pointers. The x32 ABI allows for making use of the additional registers and other features of x86_64 but with just 32-bit pointers in order to provide faster performance when 64-bit pointers are unnecessary.
+
+This headline confused me for a second, because at first I thought the Linux team was removing 32 bit support - which obviously made little sense to me. As the quoted blurb explains, that's not the case.</description>
+<dc:date>2018-12-12T23:13:45+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30926/Archiving_C64_tapes_correctly">
+<title>Archiving C64 tapes correctly</title>
+<link>http://www.osnews.com/story/30926/Archiving_C64_tapes_correctly</link>
+<description>It's pretty simple to archive Commodore 64 tapes, but it's hard if you want to do it right. Creating the complete archive of the German &quot;INPUT 64&quot; magazine was not as easy as getting one copy of each of the 32 tapes and reading them. The tapes are over 30 years old by now, and many of them are hardly readable any more.</description>
+<dc:date>2018-12-12T23:10:06+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30925/How_Doug_Engelbart_pulled_off_the_Mother_of_all_Demos">
+<title>How Doug Engelbart pulled off the Mother of all Demos</title>
+<link>http://www.osnews.com/story/30925/How_Doug_Engelbart_pulled_off_the_Mother_of_all_Demos</link>
+<description>Doug Engelbart was the first to actually build a computer that might seem familiar to us, today. He came to Silicon Valley after a stint in the Navy as a radar technician during World War II. Engelbart was, in his own estimation, a &quot;naive drifter&quot;, but something about the Valley inspired him to think big. Engelbart's idea was that computers of the future should be optimized for human needs - communication and collaboration. Computers, he reasoned, should have keyboards and screens instead of punch cards and printouts. They should augment rather than replace the human intellect. And so he pulled a team together and built a working prototype: the oN‑Line System. Unlike earlier efforts, the NLS wasn't a military supercalculator. It was a general‑purpose tool designed to help knowledge workers perform better and faster, and that was a controversial idea. Letting non-engineers interact directly with a computer was seen as harebrained, utopian - subversive, even. And then people saw the demo.
+
+Engelbart is one of the greatest visionaries of this industry.</description>
+<dc:date>2018-12-10T19:17:00+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30924/How_a_major_bug_in_the_October_2018_Update_slipped_past_Microsoft">
+<title>How a major bug in the October 2018 Update slipped past Microsoft</title>
+<link>http://www.osnews.com/story/30924/How_a_major_bug_in_the_October_2018_Update_slipped_past_Microsoft</link>
+<description>Last week, Microsoft began the relaunch of the Windows 10 October 2018 Update after pulling it more than a month ago due to a file deletion bug that somehow crept into the shipping build. While Microsoft has since gone into extensive detail as to how it's making sure something like this doesn't happen again, it's still unclear how such an issue made its way into the final release. So I did some digging.
+
+Short version: Microsoft conflated two different bugs.</description>
+<dc:date>2018-12-10T19:11:23+00:00</dc:date>
+</item>
+
+<item rdf:about="http://www.osnews.com/story/30923/Android_Emulator_picks_up_support_for_Fuchsia_s_Zircon_kernel">
+<title>Android Emulator picks up support for Fuchsia's Zircon kernel</title>
+<link>http://www.osnews.com/story/30923/Android_Emulator_picks_up_support_for_Fuchsia_s_Zircon_kernel</link>
+<description>With yesterday's Flutter Live event and the stable release of Flutter, one of the primary ways to create Fuchsia apps, Google is one step closer to possibly unveiling their in-development operating system. Another unexpected step is coming, in the form of the official Android Emulator from Android Studio gaining the ability to boot Fuchsia's Zircon kernel.
+
+While Google can be quite fickle, I feel every step forward for Fuchsia is a step towards the grave for Android/Linux.</description>
+<dc:date>2018-12-08T02:12:53+00:00</dc:date>
+</item>
+<textinput rdf:about="http://www.osnews.com/search.php"><title>Search OSNews</title><description>Search OSNews articles</description><name>search</name><link>http://www.osnews.com/search.php</link></textinput></rdf:RDF>

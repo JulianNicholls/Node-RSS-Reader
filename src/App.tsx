@@ -35,9 +35,9 @@ function App() {
         else if (data.feed) {
           console.log('Feed, not channel');
           setRSSChannel(data.feed);
-        } else setError(`Unexpected feed or channel error: ${data.error}`);
+        } else setError(`Unexpected feed or channel: ${data.error}`);
       } else {
-        console.error(data.error);
+        console.error(data);
         setError(data.error.message);
       }
     } catch (err) {

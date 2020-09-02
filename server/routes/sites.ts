@@ -22,7 +22,7 @@ router.get('/:site', async (req: express.Request, res: express.Response) => {
 
   try {
     const response = await axios.get(site);
-    const jsonData = parser.parse(response.data, fxpOptions, true);
+    const jsonData = parser.parse(response.data.trim(), fxpOptions, true);
 
     // First check for /rss/channel
     if (jsonData.rss) {
@@ -40,8 +40,10 @@ router.get('/:site', async (req: express.Request, res: express.Response) => {
       return res.json({ channel: null, feed, error: null });
     }
 
-    res.status(500).json({ error: 'Format not recognised', raw: jsonData });
+    console.log({ error: 'Format not recognised', raw: jsonData });
+    res.status(200).json({ error: 'Format not recognised', raw: jsonData });
   } catch (err) {
+    console.log({ err });
     res.status(500).json({ error: err, feed: null, channel: null });
   }
 });

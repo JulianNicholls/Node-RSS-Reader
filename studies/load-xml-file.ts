@@ -9,10 +9,10 @@ const fxpOptions = {
   parseAttributeValue: true, // Parse out attribute values to Number etc
 };
 
-const xmlData = fs.readFileSync('funwithforms.xml', 'utf-8');
+const xmlData = fs.readFileSync('os_news.rdf', 'utf-8');
 
 try {
-  const jsonData = parser.parse(xmlData, fxpOptions, true);
+  const jsonData = parser.parse(xmlData.trim(), fxpOptions, true);
 
   console.log(JSON.stringify(jsonData, null, 2));
 } catch (error) {

@@ -43,8 +43,12 @@ router.get('/:site', async (req: express.Request, res: express.Response) => {
     // Finally, try to decode an RDF as a channel
     if (jsonData['rdf:RDF']) {
       const {
-        'rdf:RDF': { channel },
+        'rdf:RDF': { channel, item },
       } = jsonData;
+
+      console.log({ jsonData, channel, items: item });
+
+      channel.item = item;
 
       return res.json({ channel, feed: null, error: null });
     }

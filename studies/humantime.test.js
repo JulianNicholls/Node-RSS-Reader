@@ -36,7 +36,28 @@ describe('Constant Short times', () => {
     expect(humanTime(time3, constantNow)).toBe('A few minutes ago');
   });
 
-  it('should return N minutes ago', () => {
+  it('Should return numbers from 2-9 in words', () => {
+    const time2 = new Date('2020-08-01T07:00:00');
+    const time3 = new Date('2020-08-01T06:00:00');
+    const time4 = new Date('2020-08-01T08:56:00');
+    const time5 = new Date('2020-08-01T08:55:00');
+    const time6 = new Date('2020-08-01T08:54:00');
+    const time7 = new Date('2020-08-01T08:53:00');
+    const time8 = new Date('2020-08-01T08:52:00');
+    const time9 = new Date('2020-08-01T08:51:00');
+
+    expect(humanTime(time2, constantNow)).toBe('A couple of hours ago');
+    expect(humanTime(time3, constantNow)).toBe('Three hours ago');
+
+    expect(humanTime(time4, constantNow)).toBe('Four minutes ago');
+    expect(humanTime(time5, constantNow)).toBe('Five minutes ago');
+    expect(humanTime(time6, constantNow)).toBe('Six minutes ago');
+    expect(humanTime(time7, constantNow)).toBe('Seven minutes ago');
+    expect(humanTime(time8, constantNow)).toBe('Eight minutes ago');
+    expect(humanTime(time9, constantNow)).toBe('Nine minutes ago');
+  });
+
+  it('should return NN minutes ago as digits', () => {
     const time1 = new Date('2020-08-01T07:54:00');
     const time2 = new Date('2020-08-01T07:53:00');
     const time3 = new Date('2020-08-01T07:52:00');
@@ -68,16 +89,28 @@ describe('Constant Short times', () => {
 });
 
 describe('Constant Rest of today', () => {
-  it('should return this morning', () => {
-    const afternoon = new Date('2020-08-01T15:00:00');
+  it('should return N hours ago for this morning until 2pm', () => {
+    const earlyAfternoon = new Date('2020-08-01T13:59:59');
+
+    const time1 = new Date('2020-08-01T11:55:00');
+    const time2 = new Date('2020-08-01T10:00:00');
+    const time3 = new Date('2020-08-01T08:00:00');
+
+    expect(humanTime(time1, earlyAfternoon)).toBe('Three hours ago');
+    expect(humanTime(time2, earlyAfternoon)).toBe('Four hours ago');
+    expect(humanTime(time3, earlyAfternoon)).toBe('Six hours ago');
+  });
+
+  it('should return this morning, after 2pm', () => {
+    const midAfternoon = new Date('2020-08-01T15:00:00');
 
     const time1 = new Date('2020-08-01T08:00:00');
     const time2 = new Date('2020-08-01T11:00:00');
     const time3 = new Date('2020-08-01T11:59:59');
 
-    expect(humanTime(time1, afternoon)).toBe('This morning');
-    expect(humanTime(time2, afternoon)).toBe('This morning');
-    expect(humanTime(time3, afternoon)).toBe('This morning');
+    expect(humanTime(time1, midAfternoon)).toBe('This morning');
+    expect(humanTime(time2, midAfternoon)).toBe('This morning');
+    expect(humanTime(time3, midAfternoon)).toBe('This morning');
   });
 
   it('should return N hours ago', () => {
@@ -85,9 +118,10 @@ describe('Constant Rest of today', () => {
     const time2 = new Date('2020-08-01T06:00:00');
     const time3 = new Date('2020-08-01T00:00:01');
 
-    expect(humanTime(time1, constantNow)).toBe('2 hours ago');
-    expect(humanTime(time2, constantNow)).toBe('3 hours ago');
-    expect(humanTime(time3, constantNow)).toBe('9 hours ago');
+    expect(humanTime(time1, constantNow)).toBe('A couple of hours ago');
+    expect(humanTime(time1, constantNow)).toBe('A couple of hours ago');
+    expect(humanTime(time2, constantNow)).toBe('Three hours ago');
+    expect(humanTime(time3, constantNow)).toBe('Nine hours ago');
   });
 });
 
@@ -145,9 +179,9 @@ describe('Constant Last few weeks', () => {
     const time2 = new Date('2020-06-20T12:00:00');
     const time3 = new Date('2020-06-14T12:00:00');
 
-    expect(humanTime(time1, constantNow)).toBe('5 weeks ago');
-    expect(humanTime(time2, constantNow)).toBe('6 weeks ago');
-    expect(humanTime(time3, constantNow)).toBe('7 weeks ago');
+    expect(humanTime(time1, constantNow)).toBe('Five weeks ago');
+    expect(humanTime(time2, constantNow)).toBe('Six weeks ago');
+    expect(humanTime(time3, constantNow)).toBe('Seven weeks ago');
   });
 });
 
@@ -156,10 +190,12 @@ describe('Constant Longer ago', () => {
     const time1 = new Date('2020-06-01T08:58:31');
     const time2 = new Date('2020-02-12T08:59:00');
     const time3 = new Date('2019-04-12T08:59:30');
+    const time4 = new Date('2019-12-12T08:59:00');
 
-    expect(humanTime(time1, constantNow)).toBe('2 months ago');
-    expect(humanTime(time2, constantNow)).toBe('6 months ago');
+    expect(humanTime(time1, constantNow)).toBe('A couple of months ago');
+    expect(humanTime(time2, constantNow)).toBe('Six months ago');
     expect(humanTime(time3, constantNow)).toBe('16 months ago');
+    expect(humanTime(time4, constantNow)).toBe('Eight months ago');
   });
 
   it('should return N years ago', () => {
@@ -167,8 +203,8 @@ describe('Constant Longer ago', () => {
     const time2 = new Date('2018-01-12T08:59:00');
     const time3 = new Date('2017-01-12T08:59:30');
 
-    expect(humanTime(time1, constantNow)).toBe('2 years ago');
-    expect(humanTime(time2, constantNow)).toBe('3 years ago');
-    expect(humanTime(time3, constantNow)).toBe('4 years ago');
+    expect(humanTime(time1, constantNow)).toBe('A couple of years ago');
+    expect(humanTime(time2, constantNow)).toBe('Three years ago');
+    expect(humanTime(time3, constantNow)).toBe('Four years ago');
   });
 });

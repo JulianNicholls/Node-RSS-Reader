@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && PORT=3000 NODE_ENV=production node dist/app.js",
+    "start": "tsc && PORT=30000 NODE_ENV=production node dist/app.js",
     "dev": "tsc && node dist/app.js"
   },
   "keywords": [],

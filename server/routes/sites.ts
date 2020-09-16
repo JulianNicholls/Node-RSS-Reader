@@ -46,17 +46,16 @@ router.get('/:site', async (req: express.Request, res: express.Response) => {
         'rdf:RDF': { channel, item },
       } = jsonData;
 
-      console.log({ jsonData, channel, items: item });
+      // console.log({ jsonData, channel, items: item.length });
 
       channel.item = item;
 
       return res.json({ channel, feed: null, error: null });
     }
 
-    console.error({ error: 'Format not recognised', raw: jsonData });
     res.status(200).json({ error: 'Format not recognised', raw: jsonData });
   } catch (err) {
-    console.log({ err });
+    console.error({ err });
     res.status(500).json({ error: err, feed: null, channel: null });
   }
 });

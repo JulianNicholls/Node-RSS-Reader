@@ -16,6 +16,7 @@ type AtomItem = {
   // Optional from here
   updated?: string;
   image?: FeedImage;
+  'dc:date'?: string;
 };
 
 type FeedItem = AtomItem & Atom2Item;

@@ -23,7 +23,7 @@ const ChannelHeader = ({ channel, reload }: HeaderProps) => {
     entry,
   } = channel;
 
-  const items = item ? item.length : entry.length;
+  const itemCount = item ? item.length : entry.length;
   let dateStr: string | null = null;
 
   if (lastBuildDate) dateStr = lastBuildDate;
@@ -71,7 +71,7 @@ const ChannelHeader = ({ channel, reload }: HeaderProps) => {
       </div>
 
       <div className="channel-info2">
-        <span>{items} stories</span>
+        <span>{itemCount} stories</span>
         <FiRefreshCw className="big-icon" onClick={reload} />
       </div>
     </div>

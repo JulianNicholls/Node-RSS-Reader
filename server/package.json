@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Server for RSS reader",
   "main": "index.js",
   "scripts": {
     "start": "tsc && PORT=30000 NODE_ENV=production node dist/app.js",

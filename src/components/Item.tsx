@@ -8,15 +8,17 @@ interface ItemProps {
 
 const Item = ({ item }: ItemProps) => {
   const { title, description, content, link, pubDate } = item;
+  const dcdate = item['dc:date'];
   const [dateStr, setDateStr] = useState<string>('');
 
   useEffect(() => {
     const setNewDateStr = () => {
-      if (pubDate) {
-        const dateDate = new Date(pubDate);
+      let dateDate: Date | null = null;
 
-        setDateStr(humanTime(dateDate));
-      }
+      if (pubDate) dateDate = new Date(pubDate);
+      else if (dcdate) dateDate = new Date(dcdate);
+
+      if (dateDate) setDateStr(humanTime(dateDate));
     };
 
     setNewDateStr();
@@ -26,7 +28,7 @@ const Item = ({ item }: ItemProps) => {
     return () => {
       clearInterval(id);
     };
-  }, [pubDate]);
+  }, [pubDate, dcdate]);
 
   return (
     <div className="feed-item">

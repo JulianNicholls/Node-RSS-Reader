@@ -43,7 +43,7 @@ const monthsYears = (days) => {
 };
 
 // If no 'present' time is passed, use now.
-function humanTime(time, present = new Date(Date.now())) {
+function humanTime(time, present = new Date()) {
   const today = () => {
     if (elapsed < 71 * 60) return lastHour(elapsed);
 
@@ -66,9 +66,9 @@ function humanTime(time, present = new Date(Date.now())) {
 
   // Calculate whole time in seconds, and from there, number of hours
   // and days
-  const elapsed = (present.valueOf() - time.valueOf()) / 1000;
+  const elapsed = (present.getTime() - time.getTime()) / 1000;
   const hours = elapsed / HOUR_SECS + 0.45;
-  const days = (midnight.valueOf() - time.valueOf()) / (DAY_SECS * 1000);
+  const days = (midnight.getTime() - time.getTime()) / (DAY_SECS * 1000);
 
   if (days < 0) return today();
 

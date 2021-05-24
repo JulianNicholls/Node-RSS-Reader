@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
+import Card from 'react-bootstrap/Card';
 
 import humanTime from '../humantime';
 
@@ -31,26 +33,36 @@ const Item = ({ item }: ItemProps) => {
   }, [pubDate, dcdate]);
 
   return (
-    <div className="feed-item">
-      <header>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <h2>{title}</h2>
+    <Card bg="info" text="white" className="p-2 mb-1">
+      <Card.Title className="d-flex justify-content-between">
+        <a
+          className="item-link"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h5 className="mb-0">{title}</h5>
         </a>
-        {dateStr && <div className="stamp right">{dateStr}</div>}
-      </header>
-      <div className="feed-body">
-        {description && <span>{description}</span>}
-        {content && <span>{content['#text']}</span>}
+        {dateStr && <div className="stamp text-right">{dateStr}</div>}
+      </Card.Title>
+      <Card.Text className="d-flex justify-content-between">
+        {description && <span className="d-inline-block mr-5">{description}</span>}
+        {content && (
+          <span className="d-inline-block mr-5">{content['#text']}</span>
+        )}
 
         {link && (
-          <div className="right">
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              Story
-            </a>
-          </div>
+          <a
+            className="item-link d-inline-block ml-5"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Story
+          </a>
         )}
-      </div>
-    </div>
+      </Card.Text>
+    </Card>
   );
 };
 

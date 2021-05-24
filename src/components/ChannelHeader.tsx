@@ -1,3 +1,6 @@
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import { FiRefreshCw } from 'react-icons/fi';
 
 import SelectFeed from './SelectFeed';
@@ -41,7 +44,7 @@ const ChannelHeader = ({ channel, reload }: HeaderProps) => {
 
     return text.replace(
       /(https?:\/\/\S+)/g,
-      '<a href="$&" target="_blank" rel="noopener noreferrer">$&</a>'
+      '<a class="header-link" href="$&" target="_blank" rel="noopener noreferrer">$&</a>'
     );
   };
 
@@ -49,30 +52,24 @@ const ChannelHeader = ({ channel, reload }: HeaderProps) => {
   const makeHtml = (text: string) => ({ __html: text });
 
   return (
-    <div className="channel-header">
-      <div className="channel-img">
-        {image && <img src={image.url} alt={image.title} />}
-      </div>
-
-      <div className="channel-info">
+    <Row className="bg-secondary text-white pb-2 mb-3">
+      <Col className="border-right mt-3">
+        {image && <img className="ml-3" src={image.url} alt={image.title} />}
+      </Col>
+      <Col sm={6}>
         <h2>{title}</h2>
         {description !== title && <p>{description}</p>}
-        {copyright && (
-          <p
-            className="copyright"
-            dangerouslySetInnerHTML={makeHtml(linkify(copyright))}
-          />
-        )}
+        {copyright && <p dangerouslySetInnerHTML={makeHtml(linkify(copyright))} />}
         {dateStr && <p>Last updated {dateStr}</p>}
-
+      </Col>
+      <Col className="d-flex">
         <SelectFeed />
-      </div>
-
-      <div className="channel-info2">
+      </Col>
+      <Col className="d-flex flex-column justify-space-between pl-3 border-left">
         <span>{itemCount} stories</span>
-        <FiRefreshCw className="big-icon" onClick={reload} />
-      </div>
-    </div>
+        <FiRefreshCw className="display-4" onClick={reload} />
+      </Col>
+    </Row>
   );
 };
 

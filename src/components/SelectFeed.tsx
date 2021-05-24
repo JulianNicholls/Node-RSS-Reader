@@ -1,20 +1,16 @@
-import React from 'react';
-
 import { useFeeds } from '../context';
 
 const SelectFeed = () => {
   const { feeds, currentFeed, setCurrentFeed } = useFeeds();
 
-  const setNewFeed = (e) => {
-    console.log(e.target.value);
-
+  const setNewFeed = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCurrentFeed(e.target.value);
   };
 
   return (
     <select
       onChange={setNewFeed}
-      className="select-css"
+      className="align-self-end"
       id="feed-select"
       value={currentFeed}
     >

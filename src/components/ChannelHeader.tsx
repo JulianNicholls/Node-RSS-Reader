@@ -53,7 +53,7 @@ const ChannelHeader = ({ channel, reload }: HeaderProps) => {
 
   return (
     <Row className="bg-secondary text-white pb-2 mb-3">
-      <Col className="border-right mt-3">
+      <Col sm={2} className="border-right mt-3">
         {image && <img className="ml-3" src={image.url} alt={image.title} />}
       </Col>
       <Col sm={6}>
@@ -62,10 +62,13 @@ const ChannelHeader = ({ channel, reload }: HeaderProps) => {
         {copyright && <p dangerouslySetInnerHTML={makeHtml(linkify(copyright))} />}
         {dateStr && <p>Last updated {dateStr}</p>}
       </Col>
-      <Col className="d-flex">
+      <Col sm={2} className="d-flex">
         <SelectFeed />
       </Col>
-      <Col className="d-flex flex-column justify-space-between pl-3 border-left">
+      <Col
+        sm={2}
+        className="d-flex flex-column justify-space-between pl-3 border-left"
+      >
         <span>{itemCount} stories</span>
         <FiRefreshCw className="display-4" onClick={reload} />
       </Col>

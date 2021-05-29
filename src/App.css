@@ -1,3 +1,7 @@
+body {
+  background: hsl(180, 75%, 80%);
+}
+
 .stamp {
   min-width: 20ch;
   font-size: 0.9rem;

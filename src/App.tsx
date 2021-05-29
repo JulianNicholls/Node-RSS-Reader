@@ -60,10 +60,10 @@ function App() {
   if (error) return <div className="error">{error}</div>;
 
   return (
-    <div className="App">
+    <>
       <Channel channel={rssChannel} reload={reload} />
-      <footer>RSS Reader</footer>
-    </div>
+      <footer className="mt-2 p-2 bg-secondary text-white">RSS Reader</footer>
+    </>
   );
 }
 

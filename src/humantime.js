@@ -20,6 +20,7 @@ const wordValue = (value) => {
 
   return String(value);
 };
+
 const lastHour = (elapsed) => {
   if (elapsed < 90) return 'Just now';
   if (elapsed < 210) return 'A few minutes ago';

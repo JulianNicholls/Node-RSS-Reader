@@ -1,5 +1,7 @@
 import { useRef, useEffect } from 'react';
 
+import Container from 'react-bootstrap/Container';
+
 import ChannelHeader from './ChannelHeader';
 import Item from './Item';
 
@@ -38,11 +40,11 @@ const Channel = ({ channel, reload }: ChannelProps) => {
     <>
       <ChannelHeader channel={channel} reload={reload} />
 
-      <div className="container">
+      <Container>
         {items.map((item, idx) => (
           <Item key={idx} item={item} />
         ))}
-      </div>
+      </Container>
     </>
   );
 };

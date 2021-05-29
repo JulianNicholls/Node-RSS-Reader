@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "RSS Reader",
+  "name": "Read RSS streams",
   "icons": [
     {
       "src": "favicon.ico",

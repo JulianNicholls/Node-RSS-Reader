@@ -1,5 +1,5 @@
 import express from 'express';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import parser from 'fast-xml-parser';
 
 const fxpOptions = {
@@ -54,7 +54,7 @@ router.get('/:site', async (req: express.Request, res: express.Response) => {
     }
 
     res.status(200).json({ error: 'Format not recognised', raw: jsonData });
-  } catch (err) {
+  } catch (err: any) {
     console.error(`Error: ${err.message}\n  URL:   ${err.config.url}\n  errno: ${err.errno}\n  code:  ${err.code}\n  syscall: ${err.syscall}`);
     res.status(503).json({ error: err, feed: null, channel: null });
   }

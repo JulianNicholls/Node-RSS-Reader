@@ -10,7 +10,7 @@ const SelectFeed = () => {
   return (
     <select
       onChange={setNewFeed}
-      className="align-self-end"
+      className="align-self-end p-2"
       id="feed-select"
       value={currentFeed}
     >

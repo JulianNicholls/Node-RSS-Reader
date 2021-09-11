@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 import Channel from './components/Channel';
@@ -40,7 +40,7 @@ function App() {
         console.error(data);
         setError(data.error.message);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error({ err });
       setError(err.message);
     } finally {

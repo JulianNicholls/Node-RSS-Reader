@@ -7,9 +7,13 @@ type FeedState = {
   setCurrentFeed: (s: string) => void;
 };
 
+type FCProps = {
+  children?: React.ReactNode;
+};
+
 const FeedsContext = React.createContext<FeedState>({} as FeedState);
 
-export const FeedsProvider = ({ children }: JSX.ElementChildrenAttribute) => {
+export const FeedsProvider = ({ children }: FCProps) => {
   const [feeds, setFeeds] = useState<FeedDocument[]>([]);
   const [currentFeed, setCurrentFeed] = useState<string>('');
 
@@ -38,8 +42,7 @@ export const FeedsProvider = ({ children }: JSX.ElementChildrenAttribute) => {
 export const useFeeds = (): FeedState => {
   const context = useContext(FeedsContext);
 
-  if (context === undefined)
-    throw new Error('useFeeds() must be used inside a FeedProvider block');
+  if (context === undefined) throw new Error('useFeeds() must be used inside a FeedProvider block');
 
   return context;
 };

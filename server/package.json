@@ -11,7 +11,7 @@
   "author": "Julian Nicholls <juliannicholls29@gmail.com> (https://reallybigshoe.co.uk/)",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.0",
+    "axios": "^1.7.4",
     "express": "^4.19.2",
     "fast-xml-parser": "^4.2.5",
     "mongoose": "^5.13.20",

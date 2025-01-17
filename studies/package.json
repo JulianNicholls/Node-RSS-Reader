@@ -17,7 +17,7 @@
     "axios": "^1.7.4",
     "fast-xml-parser": "^4.4.1",
     "justify-text": "^1.1.1",
-    "mongoose": "^8.8.3",
+    "mongoose": "^8.9.5",
     "node-html-parser": "^1.2.20"
   },
   "devDependencies": {
